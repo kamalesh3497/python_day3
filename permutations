@@ -1,0 +1,25 @@
+import itertools
+digit=3
+num=input("enter the number")
+
+while True:
+    x=True
+    if(int(num)<=0):
+        print("invalid input")
+        x=False
+    break
+    if(len(num)!=digit):
+        x=False
+        print("out of limit, invalid")
+    elif digit==3:
+        if(num[0]==num[1]==num[2]):
+            print("unique permutation")
+            x=False
+    break
+
+if x==True:
+    nums=list(num)
+    permutations=list(itertools.permutations(num))
+    p=([''.join(permutaion)for permutation in permutations])
+    p.remove(num)
+    print(*p)
